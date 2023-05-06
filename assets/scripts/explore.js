@@ -37,6 +37,4 @@ function init() {
           document.querySelector("img").src = "assets/images/smiling.png"; 
         }
     }, 200);
-    
-   
 }
