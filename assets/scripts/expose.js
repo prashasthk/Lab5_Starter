@@ -8,8 +8,9 @@ function init() {
   const audio = document.querySelector("audio");
   const volumeSlider = document.getElementById("volume");
   const volumeImg = document.getElementById("volume-controls").querySelector("img");
-  const jsConfetti = new JSConfetti()
+  const jsConfetti = new JSConfetti();
 
+  // Set the appropriate horn image and audio based on dropdown selection
   hornSelector.addEventListener('change', function() { 
       if (hornSelector.value == 'air-horn') {
         hornImg.src = "assets/images/air-horn.svg";
@@ -23,6 +24,7 @@ function init() {
       }
   });
 
+  // Adjust the audio volume and volume icon based on volume slider
   volumeSlider.addEventListener('change', function() {
       audio.volume = volumeSlider.value/100;
       if (volumeSlider.value == 0) {
@@ -36,11 +38,11 @@ function init() {
       }
   });
   
+  // Play horn at selected volume
   document.querySelector("button").addEventListener('click', function() {
       audio.play();
       if (hornSelector.value == 'party-horn') {
           jsConfetti.addConfetti();
       }
   });
-
 }
